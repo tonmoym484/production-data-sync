@@ -1561,13 +1561,9 @@ print("=" * 70)
 print("\n⏳ Starting Gradio interface...\n")
 
 # Create and launch interface
-demo = create_enterprise_ui()
-demo.launch(
-    server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)), share=False,  # Creates public link
-    debug=True,
-    show_error=True,
-    inline=False
-)
+if __name__ == "__main__":
+    demo = create_enterprise_ui()
+    demo.launch(server_name="0.0.0.0", server_port=7860)
 
 print("\n✅ Application is running!")
 print("🌐 Access the interface using the URL above")
